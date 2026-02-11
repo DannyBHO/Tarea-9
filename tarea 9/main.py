@@ -47,12 +47,13 @@ def menu():
             inventario.mostrar_inventario()
 
         elif opcion == "6":
-            print("👋 Saliendo del sistema... ¡Hasta luego!")
+            print(" Saliendo del sistema... ¡Hasta luego!")
             break
 
         else:
-            print("⚠️ Opción inválida, intente de nuevo.")
+            print(" Opción inválida, intente de nuevo.")
 
 # Ejecutar el programa
 if __name__ == "__main__":
     menu()
+
