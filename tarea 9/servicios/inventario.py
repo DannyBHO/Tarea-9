@@ -7,18 +7,18 @@ class Inventario:
     def añadir_producto(self, producto):
         for p in self.productos:
             if p.get_id() == producto.get_id():
-                print("⚠️ Error: Ya existe un producto con ese ID.")
+                print(" Error: Ya existe un producto con ese ID.")
                 return
         self.productos.append(producto)
-        print("✅ Producto añadido con éxito.")
+        print(" Producto añadido con éxito.")
 
     def eliminar_producto(self, id):
         for p in self.productos:
             if p.get_id() == id:
                 self.productos.remove(p)
-                print("🗑️ Producto eliminado con éxito.")
+                print(" Producto eliminado con éxito.")
                 return
-        print("⚠️ Producto no encontrado.")
+        print(" Producto no encontrado.")
 
     def actualizar_producto(self, id, nueva_cantidad=None, nuevo_precio=None):
         for p in self.productos:
@@ -27,9 +27,9 @@ class Inventario:
                     p.set_cantidad(nueva_cantidad)
                 if nuevo_precio is not None:
                     p.set_precio(nuevo_precio)
-                print("🔄 Producto actualizado con éxito.")
+                print(" Producto actualizado con éxito.")
                 return
-        print("⚠️ Producto no encontrado.")
+        print(" Producto no encontrado.")
 
     def buscar_por_nombre(self, nombre):
         encontrados = []
@@ -38,17 +38,18 @@ class Inventario:
                 encontrados.append(p)
 
         if encontrados:
-            print("\n🔎 Resultados de búsqueda:")
+            print("\n Resultados de búsqueda:")
             for p in encontrados:
                 print(p)
         else:
-            print("⚠️ No se encontraron productos con ese nombre.")
+            print(" No se encontraron productos con ese nombre.")
 
     def mostrar_inventario(self):
         if not self.productos:
-            print("\n📦 El inventario está vacío.")
+            print("\n El inventario está vacío.")
             return
 
-        print("\n📦 INVENTARIO COMPLETO:")
+        print("\n INVENTARIO COMPLETO:")
         for p in self.productos:
             print(p)
+
